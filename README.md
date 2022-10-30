@@ -25,7 +25,7 @@ A file will also be generated showing the found apps and their ids in:
 ```shell
 >>chmod +x ./create_links.sh
 >>./create_links.sh
-Created compatdata shortcut in /home/deck/shortcuts/compatdata
+Created compatdata shortcut at /home/deck/shortcuts/compatdata
 
 Shortcuts were created for the following apps:
 App Name: Fall Guys | App ID: 1097150
@@ -126,6 +126,7 @@ lrwxrwxrwx 1 deck deck   58 Oct 29 22:33 'Virtual Cottage' -> /home/deck/.local/
 ## The Shortcuts Folder
 
 ```shell
+>>ls -l ~/shortcuts
 total 4
 -rw-r--r-- 1 deck deck 1512 Oct 29 22:34  app_ids.txt
 lrwxrwxrwx 1 deck deck   50 Oct 29 22:34  compatdata -> /home/deck/.local/share/Steam/steamapps/compatdata

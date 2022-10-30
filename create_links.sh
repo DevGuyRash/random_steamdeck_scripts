@@ -10,7 +10,7 @@ shortcuts_directory="/home/deck/shortcuts"
 [[ -d $shortcuts_directory ]] || mkdir -p $shortcuts_directory
 
 # Create compatdata shortcut
-[[ -h "$shortcuts_directory/compatdata" ]] || ln -s ${compat_dir} "$shortcuts_directory/compatdata";echo "Created compatdata shortcut in $shortcuts_directory/compatdata"
+[[ -h "$shortcuts_directory/compatdata" ]] || ln -s ${compat_dir} "$shortcuts_directory/compatdata";echo "Created compatdata shortcut at $shortcuts_directory/compatdata"
 
 # Create empty App ID file
 echo "" 1> "$shortcuts_directory/app_ids.txt" 2>/dev/null
