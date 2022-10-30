@@ -26,15 +26,14 @@ do
 
 	# Set compatdata and drive_c directories
 	app_dir="${compat_dir}/$app_id"
-	drive_c_dir="${app_dir}/pfx/drive_c"
 
 
 	# Check that the corresponding app folder exists. If so, create the shortcuts.
-	if [[ -d "$app_dir" ]] && [[ -d "$drive_c_dir" ]]
+	if [[ -d "$app_dir" ]]
 	then
 		echo "App Name: $app_name | App ID: $app_id | $compat_dir/$app_id" | tee >> "$shortcuts_directory/app_ids.txt"
-		ln -sf ${drive_c_dir} "$shortcuts_directory/$app_name"
-		ln -sf ${drive_c_dir} "$compat_dir/$app_name"
+		ln -sf ${app_dir} "$shortcuts_directory/$app_name"
+		ln -sf ${app_dir} "$compat_dir/$app_name"
 
 		# Add app to list of successfully symlinked apps
 		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name" "$compat_dir/$app_name")
