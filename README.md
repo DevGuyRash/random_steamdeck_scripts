@@ -93,13 +93,13 @@ App Name: Moving Out | App ID: 996770 | /home/deck/.local/share/Steam/steamapps/
 ## The New Compatdata folder
 ```shell
 >>ls -l ~/shorcuts/compatdata/
-total 108
+total 72
 drwxr-xr-x 3 deck deck 4096 Sep 10 13:29  0
 drwxr-xr-x 3 deck deck 4096 Oct 19 19:44  1064610
 drwxr-xr-x 3 deck deck 4096 Oct 29 14:41  1097150
 drwxr-xr-x 3 deck deck 4096 Oct 29 14:41  1222670
 drwxr-xr-x 4 deck deck 4096 Oct 29 14:41  1222680
-drwxr-xr-x 2 deck deck 4096 Oct 29 22:25  1369320
+drwxr-xr-x 2 deck deck 4096 Oct 29 22:33  1369320
 drwxr-xr-x 3 deck deck 4096 Oct 29 14:41  1493710
 drwxr-xr-x 3 deck deck 4096 Oct 29 14:41  1887720
 drwxr-xr-x 3 deck deck 4096 Oct 27 15:47  2268250065
@@ -111,14 +111,32 @@ drwxr-xr-x 3 deck deck 4096 Oct 26 07:45  359840
 drwxr-xr-x 4 deck deck 4096 Oct 29 14:41  582010
 drwxr-xr-x 3 deck deck 4096 Oct 29 14:41  587620
 drwxr-xr-x 4 deck deck 4096 Oct 29 14:41  996770
-lrwxrwxrwx 1 deck deck   70 Oct 29 20:27 'Fall Guys' -> /home/deck/.local/share/Steam/steamapps/compatdata/1097150/pfx/drive_c
-lrwxrwxrwx 1 deck deck   69 Oct 29 20:27 'Monster Hunter: World' -> /home/deck/.local/share/Steam/steamapps/compatdata/582010/pfx/drive_c
-lrwxrwxrwx 1 deck deck   69 Oct 29 15:39 'Moving Out' -> /home/deck/.local/share/Steam/steamapps/compatdata/996770/pfx/drive_c
-lrwxrwxrwx 1 deck deck   70 Oct 29 15:39 'Need for Speed™ Heat ' -> /home/deck/.local/share/Steam/steamapps/compatdata/1222680/pfx/drive_c
-lrwxrwxrwx 1 deck deck   69 Oct 29 15:39 'Okami HD' -> /home/deck/.local/share/Steam/steamapps/compatdata/587620/pfx/drive_c
-lrwxrwxrwx 1 deck deck   70 Oct 29 15:39 'Proton 7.0' -> /home/deck/.local/share/Steam/steamapps/compatdata/1887720/pfx/drive_c
-lrwxrwxrwx 1 deck deck   70 Oct 29 15:39 'Proton Experimental' -> /home/deck/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c
-lrwxrwxrwx 1 deck deck   70 Oct 29 15:39 'The Sims™ 4' -> /home/deck/.local/share/Steam/steamapps/compatdata/1222670/pfx/drive_c
-lrwxrwxrwx 1 deck deck   69 Oct 29 15:39 'The Witcher 3: Wild Hunt' -> /home/deck/.local/share/Steam/steamapps/compatdata/292030/pfx/drive_c
-lrwxrwxrwx 1 deck deck   58 Oct 29 22:17 'Virtual Cottage' -> /home/deck/.local/share/Steam/steamapps/compatdata/1369320
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:33 'Fall Guys' -> /home/deck/.local/share/Steam/steamapps/compatdata/1097150
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:33 'Monster Hunter: World' -> /home/deck/.local/share/Steam/steamapps/compatdata/582010
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:33 'Moving Out' -> /home/deck/.local/share/Steam/steamapps/compatdata/996770
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:33 'Need for Speed™ Heat ' -> /home/deck/.local/share/Steam/steamapps/compatdata/1222680
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:33 'Okami HD' -> /home/deck/.local/share/Steam/steamapps/compatdata/587620
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:33 'Proton 7.0' -> /home/deck/.local/share/Steam/steamapps/compatdata/1887720
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:33 'Proton Experimental' -> /home/deck/.local/share/Steam/steamapps/compatdata/1493710
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:33 'The Sims™ 4' -> /home/deck/.local/share/Steam/steamapps/compatdata/1222670
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:33 'The Witcher 3: Wild Hunt' -> /home/deck/.local/share/Steam/steamapps/compatdata/292030
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:33 'Virtual Cottage' -> /home/deck/.local/share/Steam/steamapps/compatdata/1369320
+```
+
+## The Shortcuts Folder
+
+```shell
+total 4
+-rw-r--r-- 1 deck deck 1512 Oct 29 22:34  app_ids.txt
+lrwxrwxrwx 1 deck deck   50 Oct 29 22:34  compatdata -> /home/deck/.local/share/Steam/steamapps/compatdata
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:34 'Fall Guys' -> /home/deck/.local/share/Steam/steamapps/compatdata/1097150
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:34 'Monster Hunter: World' -> /home/deck/.local/share/Steam/steamapps/compatdata/582010
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:34 'Moving Out' -> /home/deck/.local/share/Steam/steamapps/compatdata/996770
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:34 'Need for Speed™ Heat ' -> /home/deck/.local/share/Steam/steamapps/compatdata/1222680
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:34 'Okami HD' -> /home/deck/.local/share/Steam/steamapps/compatdata/587620
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:34 'Proton 7.0' -> /home/deck/.local/share/Steam/steamapps/compatdata/1887720
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:34 'Proton Experimental' -> /home/deck/.local/share/Steam/steamapps/compatdata/1493710
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:34 'The Sims™ 4' -> /home/deck/.local/share/Steam/steamapps/compatdata/1222670
+lrwxrwxrwx 1 deck deck   57 Oct 29 22:34 'The Witcher 3: Wild Hunt' -> /home/deck/.local/share/Steam/steamapps/compatdata/292030
+lrwxrwxrwx 1 deck deck   58 Oct 29 22:34 'Virtual Cottage' -> /home/deck/.local/share/Steam/steamapps/compatdata/1369320
 ```
