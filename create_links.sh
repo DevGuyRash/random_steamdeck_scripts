@@ -13,7 +13,7 @@ shortcuts_directory="/home/deck/shortcuts"
 [[ -h "$shortcuts_directory/compatdata" ]] || ln -s ${compat_dir} "$shortcuts_directory/compatdata";echo "Created compatdata shortcut in $shortcuts_directory/compatdata"
 
 # Create empty App ID file
-cat /dev/null > "$shortcuts_directory/app_ids.txt"
+echo "" 1> "$shortcuts_directory/app_ids.txt" 2>/dev/null
 
 declare -a invalid_apps=()
 declare -a valid_apps=()
@@ -44,8 +44,7 @@ do
 	fi
 done
 
-# Spacers
-echo
+# Spacer
 echo
 
 # List all apps that shortcuts were successfully created for.
@@ -55,16 +54,14 @@ then
 	exit 0
 else
 	echo "Shortcuts were created for the following apps:"
-	for ((i=1;i<${#valid_apps[@]};i++))
+	for ((i=0;i<${#valid_apps[@]};i++))
 	do
 		echo ${valid_apps[$i]}
 	done
 fi
 
-# Spacers
+# Spacer
 echo
-echo
-
 
 # List all apps that did not have a folder in the compatdat folder.
 if [[ ${#invalid_apps[@]} -eq 0 ]]
@@ -73,7 +70,7 @@ then
 	exit 0
 else
 	echo "The following apps did not have a corresponding folder:"
-	for ((i=1;i<${#invalid_apps[@]};i++))
+	for ((i=0;i<${#invalid_apps[@]};i++))
 	do
 		echo ${invalid_apps[$i]}
 	done
