@@ -18,22 +18,23 @@ echo "" 1> "$shortcuts_directory/app_ids.txt" 2>/dev/null
 declare -a invalid_apps=()
 declare -a valid_apps=()
 
-for file in $(ls ${app_mani_dir})
+for file in ${app_mani_dir}
 do
+  # Verify there's files
+  [[ -e "$file" ]] || echo "No files exist in $app_mani_dir" 1>&2;exit 1
 	# Extract app id and name from appmanifest files
-        app_id=$(grep '"appid"' $file | cut -d'"' -f4)
-        app_name=$(grep '"name"' $file | cut -d'"' -f4)
+        app_id=$(grep '"appid"' "$file" | cut -d'"' -f4)
+        app_name=$(grep '"name"' "$file" | cut -d'"' -f4)
 
 	# Set drive_c directories
 	app_dir="${compat_dir}/$app_id"
-
 
 	# Check that the corresponding app folder exists. If so, create the shortcuts.
 	if [[ -d "$app_dir" ]]
 	then
 		echo "App Name: $app_name | App ID: $app_id | $compat_dir/$app_id" | tee >> "$shortcuts_directory/app_ids.txt"
-		ln -sf ${app_dir} "$shortcuts_directory/$app_name"
-		ln -sf ${app_dir} "$compat_dir/$app_name"
+		ln -sf "${app_dir}" "$shortcuts_directory/$app_name"
+		ln -sf "${app_dir}" "$compat_dir/$app_name"
 
 		# Add app to list of successfully symlinked apps
 		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name" "$compat_dir/$app_name")
@@ -56,7 +57,7 @@ else
 	echo "Shortcuts were created for the following apps:"
 	for ((i=0;i<${#valid_apps[@]};i++))
 	do
-		echo ${valid_apps[$i]}
+		echo "${valid_apps[$i]}"
 	done
 fi
 
@@ -72,6 +73,6 @@ else
 	echo "The following apps did not have a corresponding folder:"
 	for ((i=0;i<${#invalid_apps[@]};i++))
 	do
-		echo ${invalid_apps[$i]}
+		echo "${invalid_apps[$i]}"
 	done
 fi
