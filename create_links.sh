@@ -24,7 +24,7 @@ do
         app_id=$(grep '"appid"' $file | cut -d'"' -f4)
         app_name=$(grep '"name"' $file | cut -d'"' -f4)
 
-	# Set compatdata and drive_c directories
+	# Set drive_c directories
 	app_dir="${compat_dir}/$app_id"
 
 
