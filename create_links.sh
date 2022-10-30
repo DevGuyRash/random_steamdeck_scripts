@@ -32,7 +32,7 @@ do
 	# Check that the corresponding app folder exists. If so, create the shortcuts.
 	if [[ -d "$app_dir" ]] && [[ -d "$drive_c_dir" ]]
 	then
-		echo "App Name: $app_name | App ID: $app_id" | tee >> "$shortcuts_directory/app_ids.txt"
+		echo "App Name: $app_name | App ID: $app_id | $compat_dir/$app_id" | tee >> "$shortcuts_directory/app_ids.txt"
 		ln -sf ${drive_c_dir} "$shortcuts_directory/$app_name"
 		ln -sf ${drive_c_dir} "$compat_dir/$app_name"
 
