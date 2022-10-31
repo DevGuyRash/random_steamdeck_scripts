@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Removes leading/trailing whitespace, internal spaces, and converts to lowercase
+function convert_text() {
+  local text=$1
+  # Echo removes leading/trailing whitespace, sed removes internal spaces
+  text="$(echo -e ${text} | sed -e 's/[[:space:]]/_/g')"
+  # Convert to lowercase and return value
+  echo -e "${text,,}"
+}
+
 # Set directory variables
 base_dir="/home/deck/.local/share/Steam/steamapps"
 app_mani_dir="${base_dir}/appmanifest*.acf"
@@ -33,8 +42,8 @@ do
 	if [[ -d "$app_dir" ]]
 	then
 		echo "App Name: $app_name | App ID: $app_id | $compat_dir/$app_id" | tee >> "$shortcuts_directory/app_ids.txt"
-		ln -sf "${app_dir}" "$shortcuts_directory/$app_name"
-		ln -sf "${app_dir}" "$compat_dir/$app_name"
+		ln -sf "${app_dir}" "$shortcuts_directory/$(convert_text $app_name)"
+		ln -sf "${app_dir}" "$compat_dir/$(convert_text $app_name)"
 
 		# Add app to list of successfully symlinked apps
 		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name" "$compat_dir/$app_name")
