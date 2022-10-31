@@ -63,7 +63,7 @@ do
 		ln -sf "${app_dir}" "$compat_dir/$app_name_chngd"
 
 		# Add app to list of successfully symlinked apps
-		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name_chngd" "$compat_dir/$app_name_chngd")
+		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name" "$compat_dir/$app_name_chngd")
 	else
 		# Add app to list of unsuccessfully symlinked apps
 		echo "App Name: $app_name | App ID: $app_id | (Does Not Have a Folder)" >> "$shortcuts_directory/app_ids.txt"
