@@ -2,7 +2,7 @@
 
 # Installation
 
-1. Download or copy [create_links.sh script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/create_links.sh) to anywhere
+1. Download or copy [create_links.sh script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/create_links.sh) to anywhere
 2. Change permissions of the script using `chmod +x <filename>`
 
 # Usage
