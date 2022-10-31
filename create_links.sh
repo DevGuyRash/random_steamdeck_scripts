@@ -9,6 +9,8 @@ function convert_text() {
   echo -e "${text,,}"
 }
 
+convert_text "$@"
+
 # Set directory variables
 base_dir="/home/deck/.local/share/Steam/steamapps"
 app_mani_dir="${base_dir}/appmanifest*.acf"
