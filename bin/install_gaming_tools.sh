@@ -12,6 +12,7 @@ app_install_list=(
   "com.usebottles.bottles"
   "net.lutris.Lutris"
   "io.github.philipk.boilr"
+  "com.discordapp.Discord"
 )
 
 for ((i=0;i<${#app_install_list[@]};i++))
@@ -42,9 +43,4 @@ read -rp "Would you like to install Emudeck? [Y/n]: " user_choice
 if [[ -z $user_choice || ${user_choice,,} = "y" ]];then
   mkdir -p /home/deck/Downloads/emudeck
   wget -cO /home/deck/Downloads/emudeck/emudeck.desktop https://www.emudeck.com/EmuDeck.desktop
-fi
-
-read -rp "Would you like to install Discord? [Y/n]: " user_choice
-if [[ -z $user_choice || ${user_choice,,} = "y" ]];then
-  sudo pacman --needed --noconfirm -Sy discord
 fi
