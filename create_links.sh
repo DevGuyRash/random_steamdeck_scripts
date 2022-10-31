@@ -16,10 +16,16 @@ compat_dir="${base_dir}/compatdata"
 shortcuts_directory="/home/deck/shortcuts"
 
 # If shortcuts folder doesn't exist, create it
-[[ -d $shortcuts_directory ]] || mkdir -p $shortcuts_directory
+if [[ -d $shortcuts_directory ]];then
+  mkdir -p $shortcuts_directory
+  echo "Created shortcuts directory: $shortcuts_directory"
+fi
 
-# Create compatdata shortcut
-[[ -h "$shortcuts_directory/compatdata" ]] || ln -s ${compat_dir} "$shortcuts_directory/compatdata";echo "Created compatdata shortcut at $shortcuts_directory/compatdata"
+# Create compatdata shortcut if it doesn't already exist
+if [[ ! -h "$shortcuts_directory/compatdata" ]];then
+  ln -s ${compat_dir} "$shortcuts_directory/compatdata"
+  echo "Created compatdata shortcut: $shortcuts_directory/compatdata"
+fi
 
 # Create empty App ID file
 echo "" 1> "$shortcuts_directory/app_ids.txt" 2>/dev/null
@@ -27,9 +33,9 @@ echo "" 1> "$shortcuts_directory/app_ids.txt" 2>/dev/null
 declare -a invalid_apps=()
 declare -a valid_apps=()
 
+# Verify there's appmanifest files. Exit if not.
 for file in ${app_mani_dir}
 do
-  # Verify there's appmanifest files. Exit if not.
   if [[ ! -e "$file" ]]
   then
     echo "No files exist in $app_mani_dir"
@@ -40,7 +46,7 @@ do
   app_id=$(grep '"appid"' "$file" | cut -d'"' -f4)
   app_name=$(convert_text $(grep '"name"' "$file" | cut -d'"' -f4))
 
-	# Set drive_c directories
+	# Set app directory
 	app_dir="${compat_dir}/$app_id"
 
 	# Check that the corresponding app folder exists. If so, create the shortcuts.
