@@ -9,8 +9,6 @@ function convert_text() {
   echo -e "${text,,}"
 }
 
-convert_text "$@"
-
 # Set directory variables
 base_dir="/home/deck/.local/share/Steam/steamapps"
 app_mani_dir="${base_dir}/appmanifest*.acf"
@@ -31,11 +29,16 @@ declare -a valid_apps=()
 
 for file in ${app_mani_dir}
 do
-  # Verify there's files
-  [[ -e "$file" ]] || echo "No files exist in $app_mani_dir" 1>&2;exit 1
+  # Verify there's appmanifest files. Exit if not.
+  if [[ ! -e "$file" ]]
+  then
+    echo "No files exist in $app_mani_dir"
+    exit 1
+  fi
+
 	# Extract app id and name from appmanifest files
-        app_id=$(grep '"appid"' "$file" | cut -d'"' -f4)
-        app_name=$(grep '"name"' "$file" | cut -d'"' -f4)
+  app_id=$(grep '"appid"' "$file" | cut -d'"' -f4)
+  app_name=$(convert_text $(grep '"name"' "$file" | cut -d'"' -f4))
 
 	# Set drive_c directories
 	app_dir="${compat_dir}/$app_id"
@@ -44,8 +47,8 @@ do
 	if [[ -d "$app_dir" ]]
 	then
 		echo "App Name: $app_name | App ID: $app_id | $compat_dir/$app_id" | tee >> "$shortcuts_directory/app_ids.txt"
-		ln -sf "${app_dir}" "$shortcuts_directory/$(convert_text $app_name)"
-		ln -sf "${app_dir}" "$compat_dir/$(convert_text $app_name)"
+		ln -sf "${app_dir}" "$shortcuts_directory/$app_name"
+		ln -sf "${app_dir}" "$compat_dir/$app_name"
 
 		# Add app to list of successfully symlinked apps
 		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name" "$compat_dir/$app_name")
