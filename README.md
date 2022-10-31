@@ -5,7 +5,7 @@ any useful scripts you have so we can create an entire repo dedicated to it.
 
 # Installation
 
-1. Download or copy/paste any script in [bin]() to any folder
+1. Download or copy/paste any script in [bin](https://github.com/DevGuyRash/random_steamdeck_scripts/tree/main/bin) to any folder
 
 # Usage 
 
@@ -14,35 +14,29 @@ any useful scripts you have so we can create an entire repo dedicated to it.
 
 ## Compatdata Folder Naming Script
 
-- [Documentation]()
-- [Script]()
-
-## Install Useful Libraries
-
-This will install common libraries, and some are needed for [installing boilr]()
-via pacman.
-
-__Make sure to enable pacman first here:__ [Enable Pacman]()
-
-- [Script]()
+- [Documentation](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/docs/create_links.md)
+- [Script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/create_links.sh)
 
 ## Install Gaming Tools
 
 Installs several useful gaming tools such as ProtonUp-QT, Lutris, Bottles, boilr, etc.
 
 - Every option will ask for confirmation before installing
-- [script]()
+- [script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/install_gaming_tools.sh)
 
 ## Enable Pacman
 
-- [Script]()
+This will enable read/write on the filesystem. Please do not run unless you know what you're doing.
 
-## Install Boilr
+- [Script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/enable_pacman.sh)
 
-Boilr has been creating issues when installed via pacman using community rust and not 
-__rustup__. Use __rustup__ as your selection if you run this script.
+## Install Useful Libraries
 
-- [Script]()
+This will install common libraries, ~~and some are needed for [installing boilr](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/install_boilr.sh) via pacman.~~
+
+__Make sure to enable pacman first here:__ [Enable Pacman](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/enable_pacman.sh)
+
+- [Script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/install_useful_libs.sh)
 
 ## Repair flatpak
 
@@ -50,10 +44,17 @@ __rustup__. Use __rustup__ as your selection if you run this script.
 
 Remove and restart
 
-- [Script]()
+- [Script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/repair_flatpak_hard.sh)
 
 ### Soft repair
 
 Only uses flatpaks repair command
 
-- [Script]()
+- [Script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/repair_flatpak_soft.sh)
+
+## ~~Install Boilr via yay~~ Yay is not recommended on steamdeck
+
+Boilr has been creating issues when installed via pacman using community rust and not 
+__rustup__. Use __rustup__ as your selection if you run this script.
+
+- [Script](https://github.com/DevGuyRash/random_steamdeck_scripts/blob/main/bin/install_boilr.sh)
