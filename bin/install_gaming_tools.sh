@@ -17,11 +17,10 @@ app_install_list=(
 for ((i=0;i<${#app_install_list[@]};i++))
 do
   read -rp "Would you like to install ${app_install_list[$i]}? [Y/n]: " user_choice
-  # Install the app if user type 'y' or nothing.
+  # Install the app if user types 'y' or nothing.
   if [[ -z $user_choice || ${user_choice,,} = "y" ]];then
     app="${app_install_list[$i]}"
     flatpak install "$app"
-    # Check that the app was successfully installed
   fi
 done
 
