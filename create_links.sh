@@ -49,7 +49,6 @@ do
   app_name=$(grep '"name"' "$file" | cut -d'"' -f4)
 
   # Convert spaces to underscores for symlinks
-  convert_text "$app_name"
   app_name_chngd=$(convert_text "$app_name")
 
 	# Set app directory
