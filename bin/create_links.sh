@@ -62,7 +62,7 @@ for file in ${app_mani_dir}; do
     # Add app to list of successfully symlinked apps
     valid_apps+=(
       "App Name: $app_name | App ID: $app_id"
-      "$shortcuts_directory/$app_name"
+      "$shortcuts_directory/$app_name_chngd"
       "$compat_dir/$app_name_chngd"
       ""  # Spacer
     )

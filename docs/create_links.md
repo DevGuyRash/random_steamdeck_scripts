@@ -38,43 +38,43 @@ App Name: Moving Out | App ID: 996770 | /home/deck/.local/share/Steam/steamapps/
 
 Shortcuts were created for the following apps:
 App Name: Fall Guys | App ID: 1097150
-/home/deck/shortcuts/Fall Guys
+/home/deck/shortcuts/fall_guys
 /home/deck/.local/share/Steam/steamapps/compatdata/fall_guys
 
 App Name: The Sims™ 4 | App ID: 1222670
-/home/deck/shortcuts/The Sims™ 4
+/home/deck/shortcuts/the_sims™_4
 /home/deck/.local/share/Steam/steamapps/compatdata/the_sims™_4
 
 App Name: Need for Speed™ Heat  | App ID: 1222680
-/home/deck/shortcuts/Need for Speed™ Heat 
-/home/deck/.local/share/Steam/steamapps/compatdata/need_for_speed™_heat_
+/home/deck/shortcuts/need_for_speed™_heat
+/home/deck/.local/share/Steam/steamapps/compatdata/need_for_speed™_heat
 
 App Name: Virtual Cottage | App ID: 1369320
-/home/deck/shortcuts/Virtual Cottage
+/home/deck/shortcuts/virtual_cottage
 /home/deck/.local/share/Steam/steamapps/compatdata/virtual_cottage
 
 App Name: Proton Experimental | App ID: 1493710
-/home/deck/shortcuts/Proton Experimental
+/home/deck/shortcuts/proton_experimental
 /home/deck/.local/share/Steam/steamapps/compatdata/proton_experimental
 
 App Name: Proton 7.0 | App ID: 1887720
-/home/deck/shortcuts/Proton 7.0
+/home/deck/shortcuts/proton_7.0
 /home/deck/.local/share/Steam/steamapps/compatdata/proton_7.0
 
 App Name: The Witcher 3: Wild Hunt | App ID: 292030
-/home/deck/shortcuts/The Witcher 3: Wild Hunt
+/home/deck/shortcuts/the_witcher_3:_wild_hunt
 /home/deck/.local/share/Steam/steamapps/compatdata/the_witcher_3:_wild_hunt
 
 App Name: Monster Hunter: World | App ID: 582010
-/home/deck/shortcuts/Monster Hunter: World
+/home/deck/shortcuts/monster_hunter:_world
 /home/deck/.local/share/Steam/steamapps/compatdata/monster_hunter:_world
 
 App Name: Okami HD | App ID: 587620
-/home/deck/shortcuts/Okami HD
+/home/deck/shortcuts/okami_hd
 /home/deck/.local/share/Steam/steamapps/compatdata/okami_hd
 
 App Name: Moving Out | App ID: 996770
-/home/deck/shortcuts/Moving Out
+/home/deck/shortcuts/moving_out
 /home/deck/.local/share/Steam/steamapps/compatdata/moving_out
 
 The following apps did not have a corresponding folder:
