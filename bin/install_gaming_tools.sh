@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Update everything first
-flatpak upgrade
+flatpak update
 
-# List of apps to install
+# List of flatpak apps to install
 app_install_list=(
   "net.davidotek.pupgui2"
   "com.heroicgameslauncher.hgl"
@@ -16,12 +16,12 @@ app_install_list=(
 
 for ((i=0;i<${#app_install_list[@]};i++))
 do
-  read -rp "Would you like to install ${app_install_list[$i]}? [Y/n]" user_choice
+  read -rp "Would you like to install ${app_install_list[$i]}? [Y/n]: " user_choice
   # Install the app if user type 'y' or nothing.
   if [[ -z $user_choice || ${user_choice,,} = "y" ]];then
     app="${app_install_list[$i]}"
     flatpak install "$app"
-    echo "Installed $app"
+    # Check that the app was successfully installed
   fi
 done
 
@@ -31,6 +31,16 @@ if [[ $(flatpak search "com.github.Matoking.protontricks" 2> /dev/null | wc -l) 
   echo "alias protontricks-launch='flatpak run --command=protontricks-launch com.github.Matoking.protontricks'" >> ~/.bashrc
 fi
 
+# Install decky
+read -rp "Would you like to install Decky? [Y/n]: " user_choice
+if [[ -z $user_choice || ${user_choice,,} = "y" ]];then
+  curl -L "https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/install_release.sh" | sh
+  echo "Installed Decky. Please restart Steam for it to take effect."
+fi
+
 # Download emudeck
-mkdir -p /home/deck/Downloads/emudeck
-wget -cO /home/deck/Downloads/emudeck/emudeck.desktop https://www.emudeck.com/EmuDeck.desktop
+read -rp "Would you like to install Emudeck? [Y/n]: " user_choice
+if [[ -z $user_choice || ${user_choice,,} = "y" ]];then
+  mkdir -p /home/deck/Downloads/emudeck
+  wget -cO /home/deck/Downloads/emudeck/emudeck.desktop https://www.emudeck.com/EmuDeck.desktop
+fi

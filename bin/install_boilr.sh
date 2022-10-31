@@ -8,8 +8,9 @@ read -p "Please select rustup when prompted, selecting the default will generate
 # Install the needed libraries
 sudo pacman --needed -Sy base-devel openssl rustup
 
+# Ensure toolchain is installed correctly
+rustup install stable
+rustup default stable
+
 # Install boilr
 yay -Sy steam-boilr-gui
-
-# Install decky
-curl -L "https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/install_release.sh" | sh
