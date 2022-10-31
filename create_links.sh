@@ -71,6 +71,9 @@ do
 	fi
 done
 
+# Spacer
+echo
+
 # List all apps that shortcuts were successfully created for.
 if [[ ${#valid_apps[@]} -eq 0 ]]
 then
