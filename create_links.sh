@@ -4,7 +4,7 @@
 function convert_text() {
   local text=$1
   # Echo removes leading/trailing whitespace, sed removes internal spaces
-  text="$(echo -e ${text} | sed -e 's/[[:space:]]/_/g')"
+  text="$(echo -e "${text}" | sed -e 's/[[:space:]]/_/g')"
   # Convert to lowercase and return value
   echo -e "${text,,}"
 }
@@ -46,7 +46,11 @@ do
 
 	# Extract app id and name from appmanifest files
   app_id=$(grep '"appid"' "$file" | cut -d'"' -f4)
-  app_name=$(convert_text $(grep '"name"' "$file" | cut -d'"' -f4))
+  app_name=$(grep '"name"' "$file" | cut -d'"' -f4)
+
+  # Convert spaces to underscores for symlinks
+  convert_text "$app_name"
+  app_name_chngd=$(convert_text "$app_name")
 
 	# Set app directory
 	app_dir="${compat_dir}/$app_id"
@@ -54,12 +58,13 @@ do
 	# Check that the corresponding app folder exists. If so, create the shortcuts.
 	if [[ -d "$app_dir" ]]
 	then
-		echo "App Name: $app_name | App ID: $app_id | $compat_dir/$app_id" | tee >> "$shortcuts_directory/app_ids.txt"
-		ln -sf "${app_dir}" "$shortcuts_directory/$app_name"
-		ln -sf "${app_dir}" "$compat_dir/$app_name"
+		echo "App Name: $app_name | App ID: $app_id | $compat_dir/$app_id"
+		echo "App Name: $app_name_chngd | App ID: $app_id | $compat_dir/$app_id" >> "$shortcuts_directory/app_ids.txt"
+		ln -sf "${app_dir}" "$shortcuts_directory/$app_name_chngd"
+		ln -sf "${app_dir}" "$compat_dir/$app_name_chngd"
 
 		# Add app to list of successfully symlinked apps
-		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name" "$compat_dir/$app_name")
+		valid_apps+=("App Name: $app_name | App ID: $app_id" "$shortcuts_directory/$app_name_chngd" "$compat_dir/$app_name_chngd")
 	else
 		# Add app to list of unsuccessfully symlinked apps
 		echo "App Name: $app_name | App ID: $app_id | (Does Not Have a Folder)" >> "$shortcuts_directory/app_ids.txt"
