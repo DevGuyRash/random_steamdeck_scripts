@@ -16,7 +16,7 @@ compat_dir="${base_dir}/compatdata"
 shortcuts_directory="/home/deck/shortcuts"
 
 # If shortcuts folder doesn't exist, create it
-if [[ -d $shortcuts_directory ]];then
+if [[ ! -d $shortcuts_directory ]];then
   mkdir -p $shortcuts_directory
   echo "Created shortcuts directory: $shortcuts_directory"
 fi
@@ -25,6 +25,8 @@ fi
 if [[ ! -h "$shortcuts_directory/compatdata" ]];then
   ln -s ${compat_dir} "$shortcuts_directory/compatdata"
   echo "Created compatdata shortcut: $shortcuts_directory/compatdata"
+  # Spacer
+  echo
 fi
 
 # Create empty App ID file
@@ -64,9 +66,6 @@ do
 		invalid_apps+=("App Name: ${app_name} | App ID: ${app_id}")
 	fi
 done
-
-# Spacer
-echo
 
 # List all apps that shortcuts were successfully created for.
 if [[ ${#valid_apps[@]} -eq 0 ]]
