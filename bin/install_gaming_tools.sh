@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Update everything first
-flatpak update
+flatpak --user update
 
 # List of flatpak apps to install
 app_install_list=(
