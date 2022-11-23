@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Update everything first
-flatpak --user update
+sudo flatpak update
 
 # List of flatpak apps to install
 app_install_list=(
@@ -21,7 +21,7 @@ do
   # Install the app if user types 'y' or nothing.
   if [[ -z $user_choice || ${user_choice,,} = "y" ]];then
     app="${app_install_list[$i]}"
-    flatpak install "$app"
+    sudo flatpak install "$app"
   fi
 done
 
